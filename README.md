@@ -2,7 +2,8 @@
 
 Goal:
 
-- Make it as Access Point, WAN From ethernet (not yet works)
+- [ ] Gain root access (not yet works)
+- [ ] Make it as Access Point, WAN From ethernet (not yet works)
 
 Firmware:
 - https://github.com/ndunks/kumpulan-firmware/tree/master/router
