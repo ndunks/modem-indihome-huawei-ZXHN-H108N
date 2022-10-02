@@ -1,0 +1,65 @@
+
+
+Bootbase Version: VTC_SPI_8M1.16 |  2012/12/26 16:00:00
+RAM: Size = 16384 Kbytes
+Found SPI Flash 8MiB W25Q64 at 0xb0000000
+SPI Flash Quad Enable
+Turn off Quad Mode
+
+RAS Version: ZXHN H108NV4.0.1a_ZRQ_ID_D67                                      
+System   ID: $2.12.186.0(G94.BY.4)3.20.39.20  20140909_v004  | 2014/09/09  
+
+Press any key to enter debug mode within 3 seconds.
+............................................................
+Copyright (c) 2001 - 2006 ZTE Corporation
+
+running romfile and backup romfile is  the same 
+ 
+Erasing 4K Sector...
+
+Erasing 4K Sector...
+
+writeRomBlock(): Erase OK!
+initialize ch = 0, TC2105MJ, ethernet address: 34:37:59:d9:b8:d0
+initialize ch = 1, ethernet address: 34:37:59:d9:b8:d0
+tcphy[3]: Link-up at 100F. tx_amp_save=0.
+tcphy[3]: boosten=1 agccode=5 zfgain=6 ch_idx=23 snr=3 
+Wan Channel init ........ done
+Reset dmt
+Check DMT version =b2 ........ 
+Initializing ADSL F/W ........ done 
+ADSL HW version: b2, HCLK 140
+ok
+
+==>natTableMemoryInit
+<==natTableMemoryInitANNEXI
+dhcpSvrPortFilter: 1
+new administrator name  is: support.
+run distributePvcFakeMac!
+now autocwmpoui is off 
+SAR TX priority switch Off!
+largeD flag=2 (0:maxD=64, 1:maxD=128, 2:maxD=511)
+Testlab 32 
+set try multimode number to 3 (dropmode try num 3)
+SRAOFF
+sys vlanlock on
+sys firmwarelock on
+Current Stdio Timeout = 30 minutes
+Syncookie switch Off!
+run distributePvcFakeMac!
+run distributePvcFakeMac!
+run d
+Erasing 4K Sector...
+
+Erasing 4K Sector...
+
+writeRomBlock(): Erase OK!
+istributePvcFakeMac!
+run distributePvcFakeMac!
+run distributePvcFakeMac!
+run distributePvcFakeMac!
+run distributePvcFakeMac!
+run distributePvcFakeMac!
+IP multicast group timeout is 40 seconds
+IGMP query interval is 15 seconds
+Press ENTER to continue...
