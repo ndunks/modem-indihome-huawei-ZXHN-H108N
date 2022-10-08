@@ -1,1 +1,4 @@
 /tmp
+/firmware/tmp
+/firmware/_firmware.bin.extracted
+__pycache__

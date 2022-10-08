@@ -5,8 +5,6 @@ Goal:
 - [ ] Gain root access (not yet works)
 - [ ] Make it as Access Point, WAN From ethernet (not yet works)
 
-Firmware:
-- https://github.com/ndunks/kumpulan-firmware/tree/master/router
 
 If you have Broadcom version, you can use OpenWRT:
 https://openwrt.org/toh/zte/zxhnh108n
@@ -79,10 +77,12 @@ tr069: yes
 
 ## Rooting
 
+- Activate uPNP and ACS
+
 **Vulnerabilities:**
 
 - https://sudonull.com/post/59881-Too-many-cooks-or-hacking-the-Internet-with-TR-069
-
+- Maybe work? https://www.exploit-db.com/exploits/27044
 
 **Crash/Reboot PoC:**
 

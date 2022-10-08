@@ -1,4 +1,33 @@
+# ZyNOS / Zyxel Netwok OS
 
+
+## Referrences
+
+- https://github.com/ndunks/kumpulan-firmware/tree/master/router
+- https://github.com/hynnet/hiwifi-openwrt-HC5661-HC5761/blob/cf3a8037cbf037136dd413eb39ff0f1ef27096a6/tmp/.targetinfo#L1951
+- https://git.openwrt.org/?p=project/firmware-utils.git;a=blob;f=src/zynos.h;h=6c9c1a0cbde753e6ab609263f91e0ae461eba874;hb=HEAD
+
+
+## Extractin rom-0 image
+
+spt.dat contain device config also the root password.
+
+Original script can be found here:
+
+- https://github.com/dev-zzo/router-tools
+
+I just modify it to work with dumped image from flash. also change it syntax to Python 3
+
+```
+python unrom0.py
+```
+
+
+## Clues
+
+- Copyright (c) 1994 - 2004 ZyXEL Communications Corp.
+- Copyright (c) 2001 - 2006 TrendChip Technologies Corp.
+- Copyright string: "Copyright (c) 1996-2010 Express Logic Inc. * ThreadX MIPS32_34Kx/Green Hills Version G5.4.5.0 SN: 3182-197-0401
 ## Readback / Upload Firmware with CH341A
 
 ``` bash
