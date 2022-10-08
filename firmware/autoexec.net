@@ -1,0 +1,29 @@
+sys pvclock 1 1
+ip igmp proxy 1
+ip dhcpsvr portf 1
+ppp lcp echoretry 12
+sys admin support
+w fakemac pvc run
+ip tcp mss 512
+sys autocwmpoui off
+w tsarm txpri off
+ip dns sendall on
+w dmt2 set largeD 2
+w dmt2 db tlb 32
+w ghs set multi 3 3
+w dmt2 set olr 2
+sys vlanlock on
+ip rip activate
+sys firmwarelock on
+ip rip merge on
+ip icmp discovery enif0 off
+ether driver etherppp on
+ether driver ackmode off
+ppp ipcp compress off
+sys stdio 30
+sys wdog sw on
+sys quick enable
+e
+g sw on
+sys quick enable
+wan ads

@@ -15,7 +15,7 @@ import sys
 def process_spt(name: str):
     magic, h1, h2, h3 = struct.unpack('>IHHI', fp.read(12))
     if magic != 0xCEEDDBDB:
-        print("Magic number doesn't match.")
+        print("Magic number doesn't match")
         return
     ofp = open(name, 'wb')
     w = lzs.RingList(2048)
@@ -48,6 +48,11 @@ while block_entries > 0:
     fp.seek(block_offset + offset, 0)
     if name == 'spt.dat':
         process_spt(name)
+    else:
+        print("Writing raw %s (no decompress)" % name)
+        ofp = open(name, 'wb')
+        ofp.write(fp.read(length))
+        ofp.close()
     fp.seek(next_offset, 0)
     
     block_entries -= 1
