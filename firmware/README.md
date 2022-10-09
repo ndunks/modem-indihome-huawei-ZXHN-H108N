@@ -9,6 +9,10 @@
 - https://github.com/fireworm0/tplink
 - https://pastebin.com/bKeufDYD
 - https://github.com/MilkAlien/tcrevenge
+- http://www.ixo.de/info/zyxel_uclinux/
+
+## Toolchain?
+- https://github.com/HyGw/test
 
 ## Extractin rom-0 image
 
@@ -26,7 +30,7 @@ python unrom0.py
 
 
 ## Clues
-
+- ZXHN H108NV4.0.1a_ZRQ_ID_D67
 - Copyright (c) 1994 - 2004 ZyXEL Communications Corp.
 - Copyright (c) 2001 - 2006 TrendChip Technologies Corp.
 - Copyright string: "Copyright (c) 1996-2010 Express Logic Inc. * ThreadX MIPS32_34Kx/Green Hills Version G5.4.5.0 SN: 3182-197-0401
@@ -46,6 +50,17 @@ flashrom -p ch341a_spi -r firmware.bin
 # Found Winbond flash chip "W25Q64.V" (8192 kB, SPI) on ch341a_spi
 # Reading flash... 
 # Done
+
+```
+
+## Disassembly Bootloader
+
+Refs: https://vasvir.wordpress.com/2015/03/29/trendchip-firmware-xor-checksum-algorithm-disassembly/
+
+```
+dd if=firmware.bin bs=1 count=$((0x6000)) of=bootloader.bin
+mips-linux-gnu-objcopy -I binary -O elf32-tradbigmips -B mips --rename-section .data=.text --change-address 0xbfc00000 bootloader.bin bootloader.elf
+mips-linux-gnu-objdump -D bootloader.elf > bootloader.asm
 
 ```
 
