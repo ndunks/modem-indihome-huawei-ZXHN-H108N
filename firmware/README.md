@@ -6,7 +6,9 @@
 - https://github.com/ndunks/kumpulan-firmware/tree/master/router
 - https://github.com/hynnet/hiwifi-openwrt-HC5661-HC5761/blob/cf3a8037cbf037136dd413eb39ff0f1ef27096a6/tmp/.targetinfo#L1951
 - https://git.openwrt.org/?p=project/firmware-utils.git;a=blob;f=src/zynos.h;h=6c9c1a0cbde753e6ab609263f91e0ae461eba874;hb=HEAD
-
+- https://github.com/fireworm0/tplink
+- https://pastebin.com/bKeufDYD
+- https://github.com/MilkAlien/tcrevenge
 
 ## Extractin rom-0 image
 
@@ -28,6 +30,8 @@ python unrom0.py
 - Copyright (c) 1994 - 2004 ZyXEL Communications Corp.
 - Copyright (c) 2001 - 2006 TrendChip Technologies Corp.
 - Copyright string: "Copyright (c) 1996-2010 Express Logic Inc. * ThreadX MIPS32_34Kx/Green Hills Version G5.4.5.0 SN: 3182-197-0401
+- Trendchip 11BGN AP
+
 ## Readback / Upload Firmware with CH341A
 
 ``` bash

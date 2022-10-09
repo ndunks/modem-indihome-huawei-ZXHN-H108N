@@ -11,8 +11,8 @@ import sys
 import struct
 import lzs
 import sys
-
 def process_spt(name: str):
+    # https://docs.python.org/3/library/struct.html
     magic, h1, h2, h3 = struct.unpack('>IHHI', fp.read(12))
     if magic != 0xCEEDDBDB:
         print("Magic number doesn't match")
