@@ -4,6 +4,7 @@
 ## Referrences
 
 - https://github.com/ndunks/kumpulan-firmware/tree/master/router
+- https://github.com/dev-zzo/router-tools
 - https://github.com/hynnet/hiwifi-openwrt-HC5661-HC5761/blob/cf3a8037cbf037136dd413eb39ff0f1ef27096a6/tmp/.targetinfo#L1951
 - https://git.openwrt.org/?p=project/firmware-utils.git;a=blob;f=src/zynos.h;h=6c9c1a0cbde753e6ab609263f91e0ae461eba874;hb=HEAD
 - https://github.com/fireworm0/tplink
@@ -52,18 +53,42 @@ flashrom -p ch341a_spi -r firmware.bin
 # Done
 
 ```
+## Get ZynOS Rom
+
+Dumped binary is 8388608 bytes, it looks have 2 part in half, split it:
+
+``` bash
+# 8388608/1024 = 8192 KB
+# half 8192/2 = 4096 KB 
+dd if=firmware.bin bs=1024 count=4096 of=firmware-1.bin
+dd if=firmware.bin bs=1024 skip=4096 of=firmware-2.bin
+# Unpack with router-tools: https://github.com/dev-zzo/router-tools
+python zynos.py unpack  firmware-2.bin
+
+```
 
 ## Disassembly Bootloader
 
 Refs: https://vasvir.wordpress.com/2015/03/29/trendchip-firmware-xor-checksum-algorithm-disassembly/
 
 ```
-dd if=firmware.bin bs=1 count=$((0x6000)) of=bootloader.bin
+dd if=firmware.bin bs=1 count=$((0xb50)) of=bootloader.bin
 mips-linux-gnu-objcopy -I binary -O elf32-tradbigmips -B mips --rename-section .data=.text --change-address 0xbfc00000 bootloader.bin bootloader.elf
 mips-linux-gnu-objdump -D bootloader.elf > bootloader.asm
 
 ```
+### Debugging Bootloader
 
+``` bash
+qemu-system-mips -M malta -nodefaults -serial mon:stdio \
+-bios bootloader.bin -d in_asm,guest_errors,int -S -s
+
+qemu-system-mips -M malta -nodefaults -serial mon:stdio \
+-bios firmware.bin -d in_asm,guest_errors,int -S -s
+
+gdb-multiarch
+
+```
 ## Inspecting Firmware
 
 |DECIMAL|HEXADECIMAL|    DESCRIPTION |
