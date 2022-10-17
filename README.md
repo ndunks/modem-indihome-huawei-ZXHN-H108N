@@ -10,6 +10,15 @@ If you have Broadcom version, you can use OpenWRT:
 https://openwrt.org/toh/zte/zxhnh108n
 
 This device is Ralink chipset, No root access
+- Ralink RT63365E
+- Ralink RT63087N
+
+
+## Related Buildroot/toolchain ?
+
+- https://github.com/executabls/dsl-n14u_gpl/wiki/Detailed-Device-Specs
+- https://github.com/HyGw/test
+- https://github.com/Sirherobrine23/Dir819gpl_code
 
 ## Serial Connection
 
