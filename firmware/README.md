@@ -9,6 +9,7 @@
 - https://git.openwrt.org/?p=project/firmware-utils.git;a=blob;f=src/zynos.h;h=6c9c1a0cbde753e6ab609263f91e0ae461eba874;hb=HEAD
 - https://github.com/fireworm0/tplink
 - https://pastebin.com/bKeufDYD
+- https://github.com/vasvir/tcrevenge
 - https://github.com/MilkAlien/tcrevenge
 - http://www.ixo.de/info/zyxel_uclinux/
 
