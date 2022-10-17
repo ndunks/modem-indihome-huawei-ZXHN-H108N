@@ -66,6 +66,100 @@ dd if=firmware.bin bs=1024 skip=4096 of=firmware-2.bin
 python zynos.py unpack  firmware-2.bin
 
 ```
+```
+ZyNOS firmware tool by dev_zzo, version 1
+
+Processing the RAS image from 'firmware-2.bin'.
+ZyNOS ROMIO header:
+  Type: 03
+  Loading address: 80008000
+  Memmap address: B001C000
+  Flags: 40
+  Original size: 001965D6; checksum: 9605
+Verifying image checksum...
+
+Using 'firmware-2.bin.unpacked' as output path prefix.
+Output path already exists; writing there.
+Searching for memory map table...
+Memory map table found at offset 00014000 in the image.
+Writing 1983 bytes of $USER data to 'firmware-2.bin.unpacked/.user'
+Figuring out the address of the BootExt object...
+The image is based at B0008000 in the address space.
+
+Object: 'BootExt ' at 80008000, size 00018000 (RAMBOOT, 0)
+-> RAM object, nothing to write out.
+
+Object: 'HTPCode ' at 80020000, size 000E0000 (RAMCODE, 0)
+-> RAM object, nothing to write out.
+
+Object: 'RasCode ' at 80020000, size 006E0000 (RAMCODE, 0)
+-> RAM object, nothing to write out.
+
+Object: 'BootBas ' at B0000000, size 00004000 (ROMIMG, 0)
+-> No data in the image for this object, skipped.
+
+Object: 'DbgArea ' at B0004000, size 00002000 (ROMIMG, 1)
+-> No data in the image for this object, skipped.
+
+Object: 'RomDir2 ' at B0006000, size 00002000 (ROMDIR, 2)
+-> No data in the image for this object, skipped.
+
+Object: 'BootExt ' at B0008030, size 00013FD0 (ROMIMG, 3)
+-> Raw data.
+-> Writing 81872 bytes to 'firmware-2.bin.unpacked/BootExt'.
+
+Object: 'MemMapT ' at B001C000, size 00000C00 (ROMMAP, 5)
+-> Raw data.
+-> Writing 3072 bytes to 'firmware-2.bin.unpacked/MemMapT'.
+
+Object: 'HTPCode ' at B001CC00, size 00008000 (ROMBIN, 4)
+-> ZyNOS ROMIO header found, version string: HTP_TC V 0.05.
+-> Data is compressed, compressed/original length: 000041CF/00010488.
+-> Compression method: LZMA (3 zeros prepended)
+-> Writing 32768 bytes to 'firmware-2.bin.unpacked/HTPCode.rom'.
+
+Object: 'termcap ' at B0024C00, size 00000400 (ROMIMG, 6)
+-> Raw data.
+-> Writing 1024 bytes to 'firmware-2.bin.unpacked/termcap'.
+
+Object: 'RomDefa ' at B0025000, size 00002000 (ROMIMG, 7)
+-> Raw data.
+-> Writing 8192 bytes to 'firmware-2.bin.unpacked/RomDefa'.
+
+Object: 'LedDefi ' at B0027000, size 00000400 (ROMIMG, 8)
+-> Raw data.
+-> Writing 1024 bytes to 'firmware-2.bin.unpacked/LedDefi'.
+
+Object: 'LogoImg ' at B0027400, size 00002000 (ROMIMG, 9)
+-> Raw data.
+-> Writing 8192 bytes to 'firmware-2.bin.unpacked/LogoImg'.
+
+Object: 'LogoImg2' at B0029400, size 00002000 (ROMIMG, 16)
+-> Raw data.
+-> Writing 8192 bytes to 'firmware-2.bin.unpacked/LogoImg2'.
+
+Object: 'StrImag ' at B002B400, size 00032000 (ROMIMG, 17)
+-> Raw data.
+-> Writing 204800 bytes to 'firmware-2.bin.unpacked/StrImag'.
+
+Object: 'Rt11nE2p' at B005D400, size 00000400 (ROMIMG, 18)
+-> Raw data.
+-> Writing 1024 bytes to 'firmware-2.bin.unpacked/Rt11nE2p'.
+
+Object: 'CertFile' at B005D800, size 00000800 (ROMBIN, 19)
+('signature found %s', 'EGI')
+-> ZyNOS ROMIO header found, version string: ---
+MIICZzCCAd.
+-> Data is not compressed, length: 20434552.
+-> Writing 2048 bytes to 'firmware-2.bin.unpacked/CertFile.rom'.
+
+Object: 'RasCode ' at B005E000, size 00278400 (ROMBIN, 20)
+-> ZyNOS ROMIO header found, version string: ADSL ATU-R.
+-> Data is compressed, compressed/original length: 001405D2/0046C3B4.
+-> Compression method: LZMA (3 zeros prepended)
+-> Writing 2589696 bytes to 'firmware-2.bin.unpacked/RasCode.rom'.
+
+```
 
 ## Disassembly Bootloader
 
